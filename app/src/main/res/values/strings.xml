@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NewsStack</string>
+    <string name="already_have_an_account_login">Already have an account? <font color='#00E1FF'>Login</font></string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? <font color='#00E1FF'>Sign Up</font></string>
+    <string name="forgot_password">Forgot Your Password?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

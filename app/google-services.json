@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "832147644456",
+    "project_id": "newsstack-9bd71",
+    "storage_bucket": "newsstack-9bd71.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832147644456:android:c5bfaaf16a5f91ec96951d",
+        "android_client_info": {
+          "package_name": "com.techvipin130524.newsstack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP2xLWGhb_5PfnQTXyRG32GNckMYXmo2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

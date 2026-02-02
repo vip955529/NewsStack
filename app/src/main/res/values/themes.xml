@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+<!-- Base application theme -->
+<style name="Base.Theme.NewsStack" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Status bar -->
+    <item name="android:statusBarColor">@color/white</item>
+    <item name="android:windowLightStatusBar">true</item>
+
+    <!-- Default background -->
+    <item name="android:windowBackground">@color/white</item>
+
+</style>
+
+<!-- Main app theme -->
+<style name="Theme.NewsStack" parent="Base.Theme.NewsStack" />
+
+<!-- Splash Screen Theme (Android 12+) -->
+<style name="Theme.NewsStack.Splash" parent="Theme.SplashScreen">
+
+    <!-- Splash background color -->
+    <item name="windowSplashScreenBackground">@color/blue</item>
+
+    <!-- Splash icon -->
+    <item name="windowSplashScreenAnimatedIcon">@drawable/news</item>
+
+    <!-- Theme after splash -->
+    <item name="postSplashScreenTheme">@style/Theme.NewsStack </item>
+
+</style>
+
+</resources>
