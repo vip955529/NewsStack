@@ -27,6 +27,8 @@ import com.techvipin130524.newsstack.ui.CategoryFragment;
 import com.techvipin130524.newsstack.ui.FavoriteFragment;
 import com.techvipin130524.newsstack.ui.HomeFragment;
 import com.techvipin130524.newsstack.ui.ProfileFragment;
+import com.techvipin130524.newsstack.utils.PreferenceManager;
+import com.techvipin130524.newsstack.utils.ThemeManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        If you apply theme after UI loads
+//        App opens in Light
+//        Then switches to Dark (bad UX)
+        // STEP 1: Apply theme BEFORE UI
+        PreferenceManager preferenceManager = new PreferenceManager(this);
+        ThemeManager.applyTheme(preferenceManager.isDarkModeEnabled());
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);

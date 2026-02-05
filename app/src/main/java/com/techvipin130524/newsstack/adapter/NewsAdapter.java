@@ -24,7 +24,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     private final Context context;
     private final BookmarkClickListener bookmarkListener;
-
     private final List<Article> list = new ArrayList<>();
     private final Set<String> bookmarkedUrls = new HashSet<>();
 
@@ -72,14 +71,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
         Glide.with(context)
                 .load(article.getUrlToImage())
-                // .placeholder(R.drawable.image_placeholder)
                 .into(holder.imgNews);
 
         boolean isBookmarked = bookmarkedUrls.contains(article.getUrl());
         holder.imgBookmark.setImageResource(
-                isBookmarked
-                        ? R.drawable.ic_bookmark_filled
-                        : R.drawable.ic_bookmark_border
+                isBookmarked ? R.drawable.ic_bookmark_filled : R.drawable.ic_bookmark_border
         );
 
         holder.imgBookmark.setOnClickListener(v -> {
@@ -87,36 +83,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
                 bookmarkListener.onBookmarkClick(article);
             }
         });
-        /*
-        Article article = list.get(position);
-
-        holder.textTitle.setText(article.getTitle());
-        holder.textSource.setText(article.getSource().getName());
-        holder.txtDate.setText(article.getPublishedAt());
-
-        Glide.with(context)
-                .load(article.getUrlToImage())
-                .into(holder.imgNews);
-
-        boolean isBookmarked = bookmarkedUrls.contains(article.getUrl());
-        holder.imgBookmark.setImageResource(
-                isBookmarked ? R.drawable.ic_bookmark_filled
-                        : R.drawable.ic_bookmark_border
-        );
-
-        holder.imgBookmark.setOnClickListener(v -> {
-//            BookmarkEntity entity = new BookmarkEntity();
-//            // entity.id = article.getUrl();
-//            entity.title = article.getTitle();
-//            entity.imageUrl = article.getUrlToImage();
-//            entity.source = article.getSource().getName();
-//            entity.url = article.getUrl();
-
-            if (bookmarkListener != null) {
-                bookmarkListener.onBookmarkClick(article);
-            }
-        });
-*/
 
 
     }
