@@ -14,6 +14,31 @@ import java.util.List;
 @Dao
 public interface BookmarkDao {
 
+    // Insert bookmark (with userId)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertBookmark(BookmarkEntity bookmark);
+
+    // Get bookmarks for logged-in user
+    @Query("SELECT * FROM bookmarks WHERE userId = :userId ORDER BY id DESC")
+    LiveData<List<BookmarkEntity>> getAllBookmarks(String userId);
+
+    // Delete single bookmark (user-safe)
+    @Query("DELETE FROM bookmarks WHERE url = :url AND userId = :userId")
+    void deleteBookmark(String url, String userId);
+
+    // Check if bookmarked by THIS user
+    @Query("SELECT EXISTS(SELECT 1 FROM bookmarks WHERE url = :url AND userId = :userId)")
+    boolean isBookmarked(String url, String userId);
+
+    // Count bookmarks (for Profile)
+    @Query("SELECT COUNT(*) FROM bookmarks WHERE userId = :userId")
+    int getBookmarkCount(String userId);
+
+    // Clear bookmarks on logout
+    @Query("DELETE FROM bookmarks WHERE userId = :userId")
+    void clearUserBookmarks(String userId);
+
+/*
     @Query("DELETE FROM bookmarks WHERE url = :url")
     void deleteByUrl(String url);
 
@@ -29,20 +54,7 @@ public interface BookmarkDao {
     @Query("SELECT EXISTS(SELECT 1 FROM bookmarks WHERE url = :url)")
     boolean isBookmarked(String url);
 
+ */
 
 
-    /*
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(BookmarkEntity article);
-
-    @Delete
-    void delete(BookmarkEntity article);
-
-    @Query("SELECT * FROM bookmarks ORDER BY id DESC")
-    LiveData<List<BookmarkEntity>> getAllBookmarks();
-
-    @Query("SELECT EXISTS(SELECT 1 FROM bookmarks WHERE url = :url)")
-    boolean isBookmarked(String url);
-
-         */
 }

@@ -20,7 +20,7 @@
     <item name="windowSplashScreenBackground">@color/blue</item>
 
     <!-- Splash icon -->
-    <item name="windowSplashScreenAnimatedIcon">@drawable/news</item>
+    <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_newsstack</item>
 
     <!-- Theme after splash -->
     <item name="postSplashScreenTheme">@style/Theme.NewsStack </item>

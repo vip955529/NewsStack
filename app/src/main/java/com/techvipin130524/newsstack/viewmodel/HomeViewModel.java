@@ -10,7 +10,6 @@ import java.util.List;
 
 public class HomeViewModel extends ViewModel {
     private final NewsRepository repository;
-    private LiveData<List<Article>> newsList;
 
     public HomeViewModel() {
         repository = new NewsRepository();
@@ -18,7 +17,7 @@ public class HomeViewModel extends ViewModel {
 
     // Get HomeNews from Repository
     public LiveData<List<Article>> getNews(int page) {
-        newsList = repository.getNews(page);
+        LiveData<List<Article>> newsList = repository.getNews(page);
         return newsList;
     }
     // Get CategoryNews from Repository
