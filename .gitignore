@@ -5,15 +5,30 @@ build/
 # Local configuration
 local.properties
 
-# Android Studio
+# Android Studio / Intellij
 .idea/
 *.iml
+*.ipr
+*.iws
 
 # Logs
 *.log
 
-# OS files
+# OS generated files
 .DS_Store
 Thumbs.db
+
 # Firebase
 google-services.json
+
+# Build outputs
+*.apk
+*.aab
+*.aar
+*.dex
+*.class
+
+# Temporary files
+*.tmp
+*.swp
+*~
